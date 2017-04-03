@@ -5,7 +5,8 @@ var express = require('express');
 var fs      = require('fs');
 
 var redis = require("redis"),
-    redisClient = redis.createClient(process.env.REDIS_PORT, process.env.REDIS_IP);
+    //redisClient = redis.createClient(process.env.REDIS_PORT, process.env.REDIS_IP);
+    redisClient = Redis.new(:url => "redis://:6rHRYRaRwUb5X434@redis:6379")
 
 redisClient.on("error", function (err) {
   console.error("REDIS Error " + err);
