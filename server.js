@@ -29,7 +29,7 @@ redis.monitor(function (err, res) {
 redis.set('foo', 'bar');
 
 redis.on("monitor", function (time, args, raw_reply) {
-    redis.log(time + ": " + args); // 1458910076.446514:['set', 'foo', 'bar']
+    console.log(time + ": " + args); // 1458910076.446514:['set', 'foo', 'bar']
 });
 
 //  Local cache for static content [fixed and loaded at startup]
