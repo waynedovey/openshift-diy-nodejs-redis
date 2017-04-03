@@ -6,7 +6,7 @@ var fs      = require('fs');
 
 //var redis = require("redis"),
 //var redis = require('redis-url').connect();
-var redis = require('redis-url').parse('redis://:6rHRYRaRwUb5X434@172.30.116.33:6379')
+var redis = require('redis-url').parse('redis://:6rHRYRaRwUb5X434@172.30.116.33:6379');
 
     //redisClient = redis.createClient(process.env.REDIS_PORT, process.env.REDIS_IP);
     //redisClient = Redis.new(:url => "redis://:6rHRYRaRwUb5X434@redis:6379")
