@@ -22,6 +22,16 @@ redis.hkeys("hash key", function (err, replies) {
   redis.quit();
 });
 
+// New section
+redis.monitor(function (err, res) {
+    console.log("Entering monitoring mode.");
+});
+redis.set('foo', 'bar');
+
+redis.on("monitor", function (time, args, raw_reply) {
+    redis.log(time + ": " + args); // 1458910076.446514:['set', 'foo', 'bar']
+});
+
 //  Local cache for static content [fixed and loaded at startup]
 var zcache = { 'index.html': '' };
 zcache['index.html'] = fs.readFileSync('./index.html'); //  Cache index.html
