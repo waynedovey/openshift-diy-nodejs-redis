@@ -37,6 +37,16 @@ redis.on("connect", function () {
     redis.get("foo_rand000000000000", redis.print);
 });
 
+redis.on("connect", function () {
+    redis.set("foo_rand000000000001", "thiscouldbegreat", redis.print);
+    redis.get("foo_rand000000000001", redis.print);
+});
+
+redis.on("connect", function () {
+    redis.set("foo_rand000000000002", "thiscouldbegreat", redis.print);
+    redis.get("foo_rand000000000003", redis.print);
+});
+
 //  Local cache for static content [fixed and loaded at startup]
 var zcache = { 'index.html': '' };
 zcache['index.html'] = fs.readFileSync('./index.html'); //  Cache index.html
