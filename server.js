@@ -10,7 +10,7 @@ var redis = require('redis-url').parse('redis://:6rHRYRaRwUb5X434@172.30.116.33:
 
     //redisClient = redis.createClient(process.env.REDIS_PORT, process.env.REDIS_IP);
     //redisClient = Redis.new(:url => "redis://:6rHRYRaRwUb5X434@redis:6379")
-//require("redis-url").parse('redis://:6rHRYRaRwUb5X434@172.30.116.33:6379')
+require("redis-url").parse('redis://:6rHRYRaRwUb5X434@172.30.116.33:6379');
 
 redis.on("error", function (err) {
   console.error("REDIS Error " + err);
