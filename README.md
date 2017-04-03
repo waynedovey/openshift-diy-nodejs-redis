@@ -1,9 +1,6 @@
 openshift-diy-nodejs-redis
 ==========================
 
-Usage
------
-
 Use Redis in Node.js
 --------------------
 
