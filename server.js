@@ -32,6 +32,11 @@ redis.on("monitor", function (time, args, raw_reply) {
     console.log(time + ": " + args); // 1458910076.446514:['set', 'foo', 'bar']
 });
 
+redis.on("connect", function () {
+    redis.set("foo_rand000000000000", "some fantastic value", redis.print);
+    redis.get("foo_rand000000000000", redis.print);
+});
+
 //  Local cache for static content [fixed and loaded at startup]
 var zcache = { 'index.html': '' };
 zcache['index.html'] = fs.readFileSync('./index.html'); //  Cache index.html
