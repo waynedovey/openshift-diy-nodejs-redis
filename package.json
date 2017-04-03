@@ -26,7 +26,8 @@
 
   "dependencies": {
     "express": "2.5.11",
-    "redis": "*"
+    "redis": "*",
+    "redis-url": "*"
   },
   "devDependencies": {},
   "bundleDependencies": [],
