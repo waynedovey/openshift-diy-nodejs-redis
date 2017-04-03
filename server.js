@@ -10,19 +10,19 @@ var redis = require('redis-url').connect();
     //redisClient = Redis.new(:url => "redis://:6rHRYRaRwUb5X434@redis:6379")
 require("redis-url").parse('redis://:6rHRYRaRwUb5X434@redis:6379')
 
-redisClient.on("error", function (err) {
+redis.on("error", function (err) {
   console.error("REDIS Error " + err);
 });
 
-redisClient.set("string key", "string val", redis.print);
-redisClient.hset("hash key", "hashtest 1", "some value", redis.print);
-redisClient.hset(["hash key", "hashtest 2", "some other value"], redis.print);
-redisClient.hkeys("hash key", function (err, replies) {
+redis.set("string key", "string val", redis.print);
+redis.hset("hash key", "hashtest 1", "some value", redis.print);
+redis.hset(["hash key", "hashtest 2", "some other value"], redis.print);
+redis.hkeys("hash key", function (err, replies) {
   console.log(replies.length + " replies:");
   replies.forEach(function (reply, i) {
       console.log("    " + i + ": " + reply);
   });
-  redisClient.quit();
+  redis.quit();
 });
 
 //  Local cache for static content [fixed and loaded at startup]
